@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --backgroud-color: #d2d2d2;
+  --text-color: #020202;
+  --button-color: #a09fa4;
+}
 
 html {
   font-size: 62.5%;
@@ -8,4 +13,214 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Science Gothic", sans-serif;
+  /* font-family: "Geist", sans-serif; */
+  background: var(--backgroud-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  height: 100vh;
+}
+
+/* ---------------------------------hero-------------------------------- */
+
+.hero__connect {
+  display: flex;
+  position: absolute;
+  right: 100px;
+  bottom: 300px;
+  z-index: 3;
+}
+
+.connect__button--down {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent; /* chỉnh độ rộng */
+  border-right: 26px solid transparent;
+  border-top: 26px solid var(--button-color);
+}
+
+.button__down--text {
+  position: absolute;
+  top: -60px;
+  left: 54px;
+  transform: translate(-50%, -50%);
+  color: #747373;
+  font-weight: 600;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.connect__button--down:hover {
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent; /* chỉnh độ rộng */
+  border-right: 26px solid transparent;
+  border-top: 26px solid #747373;
+}
+
+.connect__button--down:hover .button__down--text {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-4px);
+}
+
+.connect__button--up {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent; /* chỉnh độ rộng */
+  border-right: 26px solid transparent;
+  border-bottom: 26px solid var(--button-color);
+}
+
+.button__up--text {
+  position: absolute;
+  top: 60px;
+  left: -12px;
+  transform: translate(-50%, -50%);
+  color: #747373;
+  font-weight: 600;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.connect__button--up:hover .button__up--text {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-4px);
+}
+
+.connect__button--up:hover {
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent; /* chỉnh độ rộng */
+  border-right: 26px solid transparent;
+  border-bottom: 26px solid #747373;
+}
+/* hero center */
+
+.hero__banner {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero__slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+.hero__item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(400px);
+}
+
+.hero__item--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__info {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 100vw);
+  height: max-content;
+  padding-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero__info--name {
+  font-size: 10rem;
+  font-weight: 800;
+  line-height: 1rem;
+  position: relative;
+}
+
+.hero__info--name::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #d2d2d2;
+  color: transparent;
+}
+
+.hero__nav--list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  margin-top: 30px;
+}
+
+.nav__link {
+  margin: 20px 40px;
+  font-size: 2rem;
+  padding: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.nav__link:hover {
+  transform: translateY(-6px);
+}
+
+.hero__desc {
+  font-size: 2rem;
+}
+
+.hero__desc--occupation {
+  margin-bottom: 10px;
+}
+
+.hero__desc--occupation {
+  font-size: 3rem;
+}
+
+.hero__info--model {
+  background-image: url(../image/z7273183936919_86798060c834be945aefb9ef8746b11e-removebg-preview.png);
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 130%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
 }

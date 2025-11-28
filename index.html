@@ -5,12 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- reset css -->
     <link rel="stylesheet" href="./css/reset.css" />
+    <!-- font gg -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Science+Gothic:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- style css -->
     <link rel="stylesheet" href="./css/style.css" />
     <title>PortfolioCV</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <div class="hero">
+      <div class="hero__banner">
+        <ul class="hero__nav--list">
+          <li><a href="" class="nav__link">Home</a></li>
+          <li><a href="" class="nav__link">Project</a></li>
+          <li><a href="" class="nav__link">About</a></li>
+          <li><a href="" class="nav__link">Contact</a></li>
+        </ul>
+        <div class="hero__slider" style="--quantity: 4">
+          <div class="hero__item" style="--position: 1">
+            <img
+              class="hero__item--img"
+              src="https://dragon.university/wp-content/uploads/2023/06/chinese-dragon-art-2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hero__item" style="--position: 2">
+            <img
+              class="hero__item--img"
+              src="https://dragon.university/wp-content/uploads/2023/06/chinese-dragon-art-2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hero__item" style="--position: 3">
+            <img
+              class="hero__item--img"
+              src="https://dragon.university/wp-content/uploads/2023/06/chinese-dragon-art-2.jpg"
+              alt=""
+            />
+          </div>
+          <div class="hero__item" style="--position: 4">
+            <img
+              class="hero__item--img"
+              src="https://dragon.university/wp-content/uploads/2023/06/chinese-dragon-art-2.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="hero__connect">
+          <a class="connect__button--project" href=""
+            ><div class="connect__button--down">
+              <span class="button__down--text">View my projects</span>
+            </div></a
+          >
+          <a class="connect__button--hire" href=""
+            ><div class="connect__button--up">
+              <span class="button__up--text">Hire me</span>
+            </div></a
+          >
+        </div>
+        <div class="hero__info">
+          <h1 class="hero__info--name" data-content="Nguyen Long Ho">
+            Nguyen Long Ho
+          </h1>
+
+          <div class="hero__desc">
+            <h2 class="hero__desc--occupation">Frontend Developer</h2>
+            <p class="hero__desc--tag">Khong ngung hoc hoi</p>
+          </div>
+          <div class="hero__info--model"></div>
+        </div>
+      </div>
+    </div>
     <!-- script js-->
     <script src="./js/script.js"></script>
   </body>
